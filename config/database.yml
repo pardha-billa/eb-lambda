@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  user: <%= Rails.application.credentials.pg_user %>
+  password: <%= Rails.application.credentials.pg_password %>
+  pool: 5
+
+development:
+  <<: *default
+  database: eb_development
+
+test:
+  <<: *default
+  database: eb_test
+
+production:
+  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  user: <%= Rails.application.credentials.pg_production_user %>
+  password: <%= Rails.application.credentials.pg_production_password %>
+  pool: 5
+  database: eb_production

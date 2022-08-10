@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @simple_file_upload.name %>
+</p>
+
+<p>
+  <strong>S3 file:</strong>
+  <%= @simple_file_upload.s3_file %>
+</p>
+
+<%= link_to 'Edit', edit_simple_file_upload_path(@simple_file_upload) %> |
+<%= link_to 'Back', simple_file_uploads_path %>

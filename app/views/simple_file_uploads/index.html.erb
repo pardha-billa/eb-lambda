@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Simple File Uploads</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>S3 file</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @simple_file_uploads.each do |simple_file_upload| %>
+      <tr>
+        <td><%= simple_file_upload.name %></td>
+        <td><%= simple_file_upload.s3_file %></td>
+        <td><%= link_to 'Show', simple_file_upload %></td>
+        <td><%= link_to 'Edit', edit_simple_file_upload_path(simple_file_upload) %></td>
+        <td><%= link_to 'Destroy', simple_file_upload, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Simple File Upload', new_simple_file_upload_path %>
